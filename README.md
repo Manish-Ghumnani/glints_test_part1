@@ -10,6 +10,9 @@
 1. Input the number on the command line you want to find the factorial for  
 2. Enter!
 
+### Updates
+1. Memoized the intermediate values to reduce run time
+
 ## Question 2 - Sorting
 ### Notes
 1. The algorithm goes like this:
