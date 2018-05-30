@@ -28,14 +28,14 @@
 1. Input the number of elements in the array, followed by the elements seperated by space.  
 2. Enter!
 
-##Question 3 - Matrix Rotation
-###Notes
-Algorithm:  
+## Question 3 - Matrix Rotation  
+### Notes  
+Algorithm:   
 1. Rotate each layer of the matrix seperately starting with the outermost layer  
-2. Keep solving until we reach the inner most layer
-3. Currently, it is using O(mn) extra space to copy the rotated matrix, should be optimized.
+2. Keep solving until we reach the inner most layer  
+3. Currently, it is using O(mn) extra space to copy the rotated matrix, should be optimized.  
 
-### Steps to run
+### Steps to run  
 1. Input the matrix dimensions and number of rotations (seperated by space)
 2. Input the matrix elements row by row on each line
 3. E.g.  
