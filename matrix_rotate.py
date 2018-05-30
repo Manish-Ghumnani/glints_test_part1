@@ -10,7 +10,6 @@ def rotate_matrix(matrix, m, n, r):
         while col_end > col_init:
             # for all elements in the first row or where row 0
             for i in range(col_init, col_end):
-                print(matrix[row_init][i+1])
                 copy_matrix[row_init][i] = matrix[row_init][i+1]
 
             # for all elements in column zero but after row 0
@@ -33,7 +32,7 @@ def rotate_matrix(matrix, m, n, r):
             col_end -= 1
 
         r -= 1
-        # copy to work on the
+        # copy to work on the rotated matrix
         matrix = copy_matrix
     print_matrix(copy_matrix, m, n)
 
