@@ -13,16 +13,16 @@ def rotate_matrix(matrix, m, n, r):
                 copy_matrix[row_init][i] = matrix[row_init][i+1]
 
             # for all elements in column zero but after row 0
-            for i in range(row_init+1, row_end+1):
-                copy_matrix[i][row_init] = matrix[i-1][row_init]
+            for j in range(row_init+1, row_end+1):
+                copy_matrix[j][row_init] = matrix[j-1][row_init]
 
             # for all elements in the last row after the first column
-            for i in range(col_init+1, col_end+1):
-                copy_matrix[row_end][i] = matrix[row_end][i-1]
+            for a in range(col_init+1, col_end+1):
+                copy_matrix[row_end][a] = matrix[row_end][a-1]
 
             # for all elements in the column except the last row
-            for i in range(row_init, row_end):
-                copy_matrix[i][col_end] = matrix[i+1][col_end]
+            for b in range(row_init, row_end):
+                copy_matrix[b][col_end] = matrix[b+1][col_end]
 
             # increment the init and end counters to solve for the 'inner' 2d matrix
             # and repeat until col_end and col_init meet
@@ -40,12 +40,12 @@ def rotate_matrix(matrix, m, n, r):
 def print_matrix(mat, m, n):
     for i in range(0, m):
         print()
-        for j in range(0,n):
+        for j in range(0, n):
             print(mat[i][j], end=" ")
 
 
 if __name__ == '__main__':
-    m,n,r = map(int, input().split())
+    m, n, r = map(int, input().split())
     mat = [[0]*n for k in range(m)]
     for i in range(0,m):
         mat[i] = list(map(int, input().rstrip().split()))

@@ -31,16 +31,17 @@ def sort(arr):
             count_high -= 1
         if count_low == count_high and 2 >= count_high > 0:
             if count_high == 2:
-                arr[start_idx], arr[end_idx] = arr[end_idx], arr[start_idx]
-                if arr == new_list:
+                # if swap sorts the array then print yes
+                if swap_works(arr, new_list, start_idx, end_idx):
                     print("yes")
                     print("swap", start_idx + 1, end_idx + 1)
                 else:
                     print("no")
             elif count_high == 1:
-                if start_idx - end_idx == 1:
-                    arr[start_idx], arr[end_idx] = arr[end_idx], arr[start_idx]
-                    if arr == new_list:
+                print(start_idx, end_idx)
+                if abs(start_idx - end_idx) == 1:
+                    # if swap and reverse both work (i.e. sort the array), prefer swapping
+                    if swap_works(arr, new_list, start_idx, end_idx):
                         print("yes")
                         print("swap", start_idx + 1, end_idx + 1)
                     else:
@@ -50,6 +51,14 @@ def sort(arr):
                     print("reverse", start_idx + 1, end_idx + 1)
         else:
             print("no")
+
+
+def swap_works(arr, new_list, start_idx, end_idx):
+    arr[start_idx], arr[end_idx] = arr[end_idx], arr[start_idx]
+    if arr == new_list:
+        return True
+    else:
+        return False
 
 
 if __name__ == '__main__':
